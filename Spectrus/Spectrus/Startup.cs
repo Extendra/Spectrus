@@ -46,12 +46,12 @@ namespace Spectrus
                 await next();
             });
 
-            app.UseMvc();
+            //app.UseMvc();
 
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute("Default", "{controller=Home}/{action=Index}/{id?}");
-            //});
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("Default", "{controller=Home}/{action=Index}/{id?}");
+            });
 
             app.UseFileServer();
         }
